@@ -9,7 +9,7 @@ It will run the react app
 -----------------------------------
 Start terminal in server folder
 
---> npm Start
+--> npm run Start
 
 It will listen in port 9000 on localhost
 http://localhost:9000

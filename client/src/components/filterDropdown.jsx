@@ -1,6 +1,4 @@
-import React from "react";
 
-//Filter category component
 export default function FilterByCategory({filter}) {
 
   return (

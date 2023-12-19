@@ -21,6 +21,9 @@ button{
   margin-bottom: 0.5rem;
   text-align: center;
 }
+.header ~ h3, .header ~ h4{
+  text-align: center;
+}
 
 /* form styles */
 
@@ -161,7 +164,7 @@ button{
 
 }
 
-/* new todo style */
+/* todo item style */
 .div-newtodo-col{
   display: flex;
   flex-direction: column;

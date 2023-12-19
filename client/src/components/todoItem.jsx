@@ -1,27 +1,24 @@
 import { useState } from "react";
 
 export function TodoItem({ todo, deleteItem, editItem }) {
+
   // Destructuring
   const { id, title, category, description, completed } = todo;
 
   // Hooks
-  // When edit button is clicked, title p tag, category p tag and description textarea tag are re-render to input tags. Where the user can edit them
-  // When the user clicks the edit button again, the input values are store in the editText, editTitle and editCategory variables and the
-  // editItem function is call with the edited todo 
-  const [editClick, setEditClick] = useState(true);
-  
+  // The boolean determines what to show when you click the edit button. It will alternate between inputs (to edit) and p tags. And to call the editItem function or not.
+  const [boolean, setBoolean] = useState(true);
   const [editText, setEditText] = useState(description);
   const [editTitle, setEditTitle] = useState(title);
   const [editCategory, setEditCategory] = useState(category);
 
   // Functions
-  // This function triggers the change of state of editClick and calls editItem to edit the item
+  // This function triggers the boolean and edits the item if the boolean is true
   const handleEdit = () => {
-  
-    setEditClick(!editClick);
-  
-    // This conditional is because we only want to edit the todo when the edit button is clicked again
-    if (!editClick) {
+
+    setBoolean(!boolean);
+    // After you click the the edit button for a second time, the editItem function will execute
+    if (!boolean) {
       editItem({...todo,
         title: editTitle,
         category: editCategory,
@@ -34,7 +31,7 @@ export function TodoItem({ todo, deleteItem, editItem }) {
     <li>
       <div className="div-newtodo-col">
         <div className="new title-category-row">
-          {editClick ? (
+          {boolean ? (
             <p className="input-new-text"> {title} </p>
           ) : (
             <input
@@ -47,7 +44,7 @@ export function TodoItem({ todo, deleteItem, editItem }) {
               }}
             />
           )}
-          {editClick ? (
+          {boolean ? (
             <p className="new input-new-text"> {category} </p>
           ) : (
             <select
@@ -68,7 +65,7 @@ export function TodoItem({ todo, deleteItem, editItem }) {
           )}
           {/* component */}
         </div>
-        {editClick ? (
+        {boolean ? (
           <p className="input-new-text newtodo-description"> {description} </p>
         ) : (
           <textarea
@@ -94,7 +91,7 @@ export function TodoItem({ todo, deleteItem, editItem }) {
             type="checkbox"
             checked={completed}
             onChange={(e) => editItem({...todo, completed: e.target.checked})}
-            className="checkbox"
+            className="checkboxID"
             name="checkbox"
           />
         </label>
