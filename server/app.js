@@ -8,7 +8,7 @@ import bodyParser from 'body-parser'
 
 // después
 export const createApp = ({ todoModel, userModel }) => {
-  const port = process.env.PORT ?? 9000;
+  const port = 10000;
   const hostname = "localhost";
   const app = express();
   console.log(todoModel, {todoModel})
