@@ -1,4 +1,6 @@
-import pool from "./database/db.cjs";
+// import pool from "./database/localdb.cjs";
+import pool from "./database/renderdb.cjs";
+
   
 export class TodoModel {
   static async getAll() {
