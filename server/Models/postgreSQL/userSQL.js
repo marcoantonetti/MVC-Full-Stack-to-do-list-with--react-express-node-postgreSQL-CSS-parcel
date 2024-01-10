@@ -18,7 +18,7 @@ export class UserModel {
   static async getUsers() {
     try {
       const users = await pool.query(
-        "SELECT * FROM users"
+        "SELECT * FROM public.users"
       );  
       return users.rows;
     } catch (error) {

@@ -5,7 +5,7 @@ import pool from "./database/renderdb.cjs";
 export class TodoModel {
   static async getAll() {
     try {
-      const todos = await pool.query("SELECT * FROM todos ORDER BY utc desc");
+      const todos = await pool.query("SELECT * FROM \"todos\" ORDER BY utc desc");
       return todos.rows;
     } catch (error) {
       console.error("Error with database query select *", error);
