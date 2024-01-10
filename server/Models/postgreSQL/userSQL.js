@@ -18,7 +18,7 @@ export class UserModel {
   static async getUsers() {
     try {
       const users = await pool.query(
-        "SET search_path TO public SELECT * FROM public.users"
+        "SELECT * FROM public.users"
       );  
       return users.rows;
     } catch (error) {
