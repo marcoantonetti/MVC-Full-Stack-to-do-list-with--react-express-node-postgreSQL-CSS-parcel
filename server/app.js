@@ -8,7 +8,7 @@ import bodyParser from "body-parser";
 
 // después
 export const createApp = ({ todoModel, userModel }) => {
-  const port = 10000;
+  const port = 5432;
   const hostname = "localhost";
   const app = express();
   console.log(todoModel, { todoModel });
@@ -20,7 +20,7 @@ export const createApp = ({ todoModel, userModel }) => {
   app.use("/todos", createTodoRouter({ todoModel }));
   app.use("/user", createUserRouter({ userModel }));
 
-  app.listen(port, () => {
-    console.log(`server listening on port ${port}`);
+  app.listen(5432, () => {
+    console.log(`server listening on port ${5432}`);
   });
 };
