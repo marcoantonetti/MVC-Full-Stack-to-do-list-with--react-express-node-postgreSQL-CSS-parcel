@@ -1,5 +1,5 @@
 class apiService {
-  static BASE_URL = "http://localhost:5432";
+  static BASE_URL = "http://localhost:3000";
 
   static get = async ({ endPoint }) => {
     const url = `${apiService.BASE_URL}/${endPoint}`;
