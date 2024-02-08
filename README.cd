@@ -14,13 +14,3 @@ Start terminal in server folder
 It will listen in port 9000 on localhost
 http://localhost:9000
 
----------------------------------
-DATABASE
-
-I used postgreSQL and created my database in pgAdmin4
-The database.sql file has the SQL query for the database and table 
-The db.cjs file has the connection to the database
-
-------------------------------------
-
-Thank you for your consideration
